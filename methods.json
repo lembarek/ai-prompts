@@ -1,0 +1,68 @@
+{
+  "ai_study_framework": {
+    "title": "10 Methods to Master Any Book with AI",
+    "version": "1.0",
+    "methods": [
+      {
+        "id": 1,
+        "name": "The Big Picture Overview",
+        "objective": "Understand the core thesis and supporting pillars.",
+        "prompt": "Provide a high-level summary of the book's core thesis. What is the 'one big idea' the author is trying to prove, and what are the three secondary pillars supporting it?"
+      },
+      {
+        "id": 2,
+        "name": "The Actionable Insights",
+        "objective": "Convert theory into a practical life/work plan.",
+        "prompt": "Identify the top 5 most practical takeaways from this book. For each takeaway, create a 'Step 1, Step 2, Step 3' action plan that I can implement in my daily life starting tomorrow."
+      },
+      {
+        "id": 3,
+        "name": "The Devil’s Advocate",
+        "objective": "Identify flaws, biases, and counter-arguments.",
+        "prompt": "What are the most common criticisms or counter-arguments to the author’s main points? Present a balanced view by explaining where the author’s logic might be flawed or outdated."
+      },
+      {
+        "id": 4,
+        "name": "The Key Quotes Deep-Dive",
+        "objective": "Extract and analyze the most influential passages.",
+        "prompt": "Extract 10 of the most impactful quotes from the book. For each quote, explain the context within the story/argument and why it is considered a turning point or a core principle."
+      },
+      {
+        "id": 5,
+        "name": "The Mental Model Generator",
+        "objective": "Create a reusable framework for decision-making.",
+        "prompt": "Based on the book's content, create a mental model or a framework I can use to make better decisions in [Insert Field]."
+      },
+      {
+        "id": 6,
+        "name": "The Concept Relationship Map",
+        "objective": "Visualize how characters or ideas interconnect.",
+        "prompt": "Create a table of the main characters (or core concepts). Include their primary motivations, their relationship to the protagonist (or main thesis), and how they evolve from the beginning to the end of the book."
+      },
+      {
+        "id": 7,
+        "name": "The Feynman Technique",
+        "objective": "Simplify complex ideas for maximum retention.",
+        "prompt": "Explain the most complex chapter of this book as if I am a 10-year-old. Use a simple analogy from everyday life to make the abstract concepts concrete."
+      },
+      {
+        "id": 8,
+        "name": "The Comparative Analysis",
+        "objective": "Synthesize knowledge across multiple authors.",
+        "prompt": "How does the message of this book compare to [Insert another book title]? Identify two areas where they agree and two areas where their philosophies directly conflict."
+      },
+      {
+        "id": 9,
+        "name": "The Knowledge Retention Quiz",
+        "objective": "Test your memory using active recall.",
+        "prompt": "Act as a tutor. Based on the entire book, generate 10 challenging multiple-choice questions to test my comprehension. Don't provide the answers until I respond to each one."
+      },
+      {
+        "id": 10,
+        "name": "The Contextual Timeline",
+        "objective": "Understand the historical/social world of the book.",
+        "prompt": "Provide a brief history of the era/context in which this book was written. How did the social, political, or scientific climate of that time influence the author’s perspective?"
+      }
+    ]
+  }
+}

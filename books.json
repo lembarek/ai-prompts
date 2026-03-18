@@ -1,0 +1,130 @@
+{
+  "reading_list_title": "100 Great Books for AI Deep-Dive Analysis",
+  "categories": [
+    {
+      "category": "Philosophy & Human Nature",
+      "books": [
+        {"id": 1, "title": "Meditations", "author": "Marcus Aurelius"},
+        {"id": 2, "title": "Man’s Search for Meaning", "author": "Viktor Frankl"},
+        {"id": 3, "title": "The Republic", "author": "Plato"},
+        {"id": 4, "title": "Beyond Good and Evil", "author": "Friedrich Nietzsche"},
+        {"id": 5, "title": "The Prince", "author": "Niccolò Machiavelli"},
+        {"id": 6, "title": "The Art of War", "author": "Sun Tzu"},
+        {"id": 7, "title": "Letters from a Stoic", "author": "Seneca"},
+        {"id": 8, "title": "The Social Contract", "author": "Jean-Jacques Rousseau"},
+        {"id": 9, "title": "The Denial of Death", "author": "Ernest Becker"},
+        {"id": 10, "title": "Critique of Pure Reason", "author": "Immanuel Kant"},
+        {"id": 11, "title": "The Second Sex", "author": "Simone de Beauvoir"},
+        {"id": 12, "title": "Essays", "author": "Michel de Montaigne"},
+        {"id": 13, "title": "The Stranger", "author": "Albert Camus"},
+        {"id": 14, "title": "Being and Time", "author": "Martin Heidegger"},
+        {"id": 15, "title": "The Prophet", "author": "Kahlil Gibran"},
+        {"id": 16, "title": "Tao Te Ching", "author": "Lao Tzu"},
+        {"id": 17, "title": "Walden", "author": "Henry David Thoreau"},
+        {"id": 18, "title": "The Hero with a Thousand Faces", "author": "Joseph Campbell"},
+        {"id": 19, "title": "Zen and the Art of Motorcycle Maintenance", "author": "Robert Pirsig"},
+        {"id": 20, "title": "Candide", "author": "Voltaire"}
+      ]
+    },
+    {
+      "category": "Strategy, Psychology & Self-Mastery",
+      "books": [
+        {"id": 21, "title": "Atomic Habits", "author": "James Clear"},
+        {"id": 22, "title": "Thinking, Fast and Slow", "author": "Daniel Kahneman"},
+        {"id": 23, "title": "The 7 Habits of Highly Effective People", "author": "Stephen Covey"},
+        {"id": 24, "title": "Deep Work", "author": "Cal Newport"},
+        {"id": 25, "title": "Influence: The Psychology of Persuasion", "author": "Robert Cialdini"},
+        {"id": 26, "title": "Flow", "author": "Mihaly Csikszentmihalyi"},
+        {"id": 27, "title": "Quiet", "author": "Susan Cain"},
+        {"id": 28, "title": "The Power of Habit", "author": "Charles Duhigg"},
+        {"id": 29, "title": "Grit", "author": "Angela Duckworth"},
+        {"id": 30, "title": "Mindset", "author": "Carol Dweck"},
+        {"id": 31, "title": "Outliers", "author": "Malcolm Gladwell"},
+        {"id": 32, "title": "The Black Swan", "author": "Nassim Nicholas Taleb"},
+        {"id": 33, "title": "Antifragile", "author": "Nassim Nicholas Taleb"},
+        {"id": 34, "title": "The Psychology of Money", "author": "Morgan Housel"},
+        {"id": 35, "title": "Never Split the Difference", "author": "Chris Voss"},
+        {"id": 36, "title": "Start with Why", "author": "Simon Sinek"},
+        {"id": 37, "title": "Daring Greatly", "author": "Brené Brown"},
+        {"id": 38, "title": "Zero to One", "author": "Peter Thiel"},
+        {"id": 39, "title": "The 48 Laws of Power", "author": "Robert Greene"},
+        {"id": 40, "title": "How to Win Friends and Influence People", "author": "Dale Carnegie"}
+      ]
+    },
+    {
+      "category": "Science, History & Big Ideas",
+      "books": [
+        {"id": 41, "title": "Sapiens", "author": "Yuval Noah Harari"},
+        {"id": 42, "title": "Guns, Germs, and Steel", "author": "Jared Diamond"},
+        {"id": 43, "title": "A Brief History of Time", "author": "Stephen Hawking"},
+        {"id": 44, "title": "The Selfish Gene", "author": "Richard Dawkins"},
+        {"id": 45, "title": "The Structure of Scientific Revolutions", "author": "Thomas Kuhn"},
+        {"id": 46, "title": "The Sixth Extinction", "author": "Elizabeth Kolbert"},
+        {"id": 47, "title": "Cosmos", "author": "Carl Sagan"},
+        {"id": 48, "title": "Thinking in Systems", "author": "Donella Meadows"},
+        {"id": 49, "title": "The Lessons of History", "author": "Will & Ariel Durant"},
+        {"id": 50, "title": "The Better Angels of Our Nature", "author": "Steven Pinker"},
+        {"id": 51, "title": "Factfulness", "author": "Hans Rosling"},
+        {"id": 52, "title": "The Emperor of All Maladies", "author": "Siddhartha Mukherjee"},
+        {"id": 53, "title": "Silent Spring", "author": "Rachel Carson"},
+        {"id": 54, "title": "Brief Answers to the Big Questions", "author": "Stephen Hawking"},
+        {"id": 55, "title": "The Immortal Life of Henrietta Lacks", "author": "Rebecca Skloot"},
+        {"id": 56, "title": "The Gene: An Intimate History", "author": "Siddhartha Mukherjee"},
+        {"id": 57, "title": "Algorithms to Live By", "author": "Brian Christian"},
+        {"id": 58, "title": "Collapse", "author": "Jared Diamond"},
+        {"id": 59, "title": "Enlightenment Now", "author": "Steven Pinker"},
+        {"id": 60, "title": "Homo Deus", "author": "Yuval Noah Harari"}
+      ]
+    },
+    {
+      "category": "Literature & Classic Fiction",
+      "books": [
+        {"id": 61, "title": "1984", "author": "George Orwell"},
+        {"id": 62, "title": "Brave New World", "author": "Aldous Huxley"},
+        {"id": 63, "title": "To Kill a Mockingbird", "author": "Harper Lee"},
+        {"id": 64, "title": "The Great Gatsby", "author": "F. Scott Fitzgerald"},
+        {"id": 65, "title": "Crime and Punishment", "author": "Fyodor Dostoevsky"},
+        {"id": 66, "title": "The Brothers Karamazov", "author": "Fyodor Dostoevsky"},
+        {"id": 67, "title": "One Hundred Years of Solitude", "author": "Gabriel García Márquez"},
+        {"id": 68, "title": "Moby Dick", "author": "Herman Melville"},
+        {"id": 69, "title": "Ulysses", "author": "James Joyce"},
+        {"id": 70, "title": "The Catcher in the Rye", "author": "J.D. Salinger"},
+        {"id": 71, "title": "War and Peace", "author": "Leo Tolstoy"},
+        {"id": 72, "title": "Anna Karenina", "author": "Leo Tolstoy"},
+        {"id": 73, "title": "Fahrenheit 451", "author": "Ray Bradbury"},
+        {"id": 74, "title": "Frankenstein", "author": "Mary Shelley"},
+        {"id": 75, "title": "The Picture of Dorian Gray", "author": "Oscar Wilde"},
+        {"id": 76, "title": "Invisible Man", "author": "Ralph Ellison"},
+        {"id": 77, "title": "The Trial", "author": "Franz Kafka"},
+        {"id": 78, "title": "Don Quixote", "author": "Miguel de Cervantes"},
+        {"id": 79, "title": "Beloved", "author": "Toni Morrison"},
+        {"id": 80, "title": "Animal Farm", "author": "George Orwell"}
+      ]
+    },
+    {
+      "category": "Modern Classics & Thought-Provoking Memoirs",
+      "books": [
+        {"id": 81, "title": "The Handmaid’s Tale", "author": "Margaret Atwood"},
+        {"id": 82, "title": "Dune", "author": "Frank Herbert"},
+        {"id": 83, "title": "The Alchemist", "author": "Paulo Coelho"},
+        {"id": 84, "title": "Educated", "author": "Tara Westover"},
+        {"id": 85, "title": "The Glass Castle", "author": "Jeannette Walls"},
+        {"id": 86, "title": "Born a Crime", "author": "Trevor Noah"},
+        {"id": 87, "title": "The Diary of a Young Girl", "author": "Anne Frank"},
+        {"id": 88, "title": "When Breath Becomes Air", "author": "Paul Kalanithi"},
+        {"id": 89, "title": "Life of Pi", "author": "Yann Martel"},
+        {"id": 90, "title": "Catch-22", "author": "Joseph Heller"},
+        {"id": 91, "title": "Slaughterhouse-Five", "author": "Kurt Vonnegut"},
+        {"id": 92, "title": "The Road", "author": "Cormac McCarthy"},
+        {"id": 93, "title": "Things Fall Apart", "author": "Chinua Achebe"},
+        {"id": 94, "title": "The Book Thief", "author": "Markus Zusak"},
+        {"id": 95, "title": "The Kite Runner", "author": "Khaled Hosseini"},
+        {"id": 96, "title": "The Shadow of the Wind", "author": "Carlos Ruiz Zafón"},
+        {"id": 97, "title": "Kafka on the Shore", "author": "Haruki Murakami"},
+        {"id": 98, "title": "Americanah", "author": "Chimamanda Ngozi Adichie"},
+        {"id": 99, "title": "Shantaram", "author": "Gregory David Roberts"},
+        {"id": 100, "title": "The Name of the Rose", "author": "Umberto Eco"}
+      ]
+    }
+  ]
+}
