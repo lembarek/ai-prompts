@@ -133,7 +133,7 @@ for category in books_list:
 
         # 2. Get platform-specific details from the method
         # Default to standard Google if keys are missing
-        method_base_url = item.get('search_link', "https://www.google.com/search?q=")
+        method_base_url = item.get('search_link', "https://www.google.com/search?")
         platform = item.get('platform_type', 'google_web')
 
         # 3. Dynamic URL Encoding based on Platform

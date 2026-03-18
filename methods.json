@@ -8,7 +8,7 @@
         "name": "The Author’s Odyssey",
         "objective": "Understand the creator’s background and credibility.",
         "platform_type": "google_web",
-        "search_link": "https://www.google.com/search?q=",
+        "search_link": "https://www.google.com/search?",
         "prompt": "Provide a detailed summary of the author’s life, their expertise in this subject, and the 'Why' behind this book. What specific life experiences led them to write this?"
       },
       {
@@ -112,7 +112,7 @@
         "name": "The Contextual Timeline",
         "objective": "Understand the historical/social world of the book.",
         "platform_type": "google_web",
-        "search_link": "https://www.google.com/search?q=",
+        "search_link": "https://www.google.com/search?",
         "prompt": "Provide a brief history of the era/context in which {title} was written. How did the climate of that time influence the author’s perspective?"
       }
     ]
