@@ -45,12 +45,38 @@ html_content = """
         .index-link:hover { text-decoration: underline; }
         .category-section { margin-bottom: 30px; border-top: 1px solid #eee; padding-top: 20px; }
         .prompt-link { display: block; margin: 12px 0; color: #1a0dab; text-decoration: none; font-size: 16px; padding: 5px 0; }
-        .prompt-link.visited { display: none; }
         .book-section.hidden { display: none; }
+        .book-section.filter-hidden { display: none; }
         h1 { text-align: center; }
         h2 { color: #4285f4; border-bottom: 2px solid #4285f4; }
         h3 { background: #f1f3f4; padding: 10px; border-radius: 4px; }
         .meta-info { font-size: 0.85em; color: #70757a; font-weight: bold; }
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #4285f4;
+            background-color: white;
+            color: #4285f4;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        .filter-btn:hover {
+            background-color: #e8f0fe;
+        }
+        .filter-btn.active {
+            background-color: #4285f4;
+            color: white;
+        }
+        .prompt-link.filter-hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -67,6 +93,15 @@ for category in books_list:
         html_content += f'<a class="index-link" href="#{book_id}">{book["title"]} by {book["author"]}</a>'
 html_content += '</div>'
 # ----------------------------------------------------
+
+# Add filter buttons
+html_content += '''
+<div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">Show All Links</button>
+    <button class="filter-btn" data-filter="saved">Show Saved Links Only</button>
+    <button class="filter-btn" data-filter="unsaved">Show Unsaved Links Only</button>
+</div>
+'''
 
 total_prompts_count = 0
 
@@ -104,6 +139,7 @@ for category in books_list:
         # 3. Dynamic URL Encoding based on Platform
         if platform == 'youtube':
             # YouTube uses 'search_query' as the parameter
+            actual_text = f"{item['generated_prompt']} (Book: {item['book_title']} by {item['author']})"
             query_params = {'search_query': actual_text}
             final_url = f"{method_base_url}{urlencode(query_params)}"
 
@@ -142,14 +178,12 @@ html_content += """</div>
         // Save to localStorage
         localStorage.setItem(linkId, 'visited');
         
-        // Hide the clicked link
-        const linkElement = document.getElementById(linkId);
-        if (linkElement) {
-            linkElement.classList.add('visited');
-        }
-        
+        // Don't add 'visited' class to hide the link
+        // Instead, reapply the current filter which will handle visibility
         // Check if all links for this book are visited
         checkBookCompletion(bookTitle);
+        // Reapply current filter after marking as visited
+        applyCurrentFilter();
     }
 
     // Function to check if all links for a book are visited
@@ -165,30 +199,89 @@ html_content += """</div>
             }
         });
         
-        if (allVisited) {
-            // Find the book section to hide
-            // The book section is the parent div with class 'book-section' that contains the h3 with the book title
-            // Since we structured it with a div wrapping each book, we can find it by id
-            const bookId = 'book_' + bookTitle.replace(/ /g, '_');
-            const bookSection = document.getElementById(bookId);
-            if (bookSection) {
+        const bookId = 'book_' + bookTitle.replace(/ /g, '_');
+        const bookSection = document.getElementById(bookId);
+        if (bookSection) {
+            if (allVisited) {
                 bookSection.classList.add('hidden');
+            } else {
+                // If not all visited, remove the hidden class
+                bookSection.classList.remove('hidden');
             }
         }
     }
 
-    // On page load, hide visited links and check book completion
-    document.addEventListener('DOMContentLoaded', function() {
-        // Hide individual visited links
+    // Filter functions
+    function applyFilter(filterType) {
         const allLinks = document.querySelectorAll('.prompt-link');
+        // First, reset all links and book sections
+        allLinks.forEach(link => {
+            link.classList.remove('filter-hidden');
+        });
+        // Reset book sections to be visible (except those where all links are visited)
+        document.querySelectorAll('.book-section').forEach(section => {
+            section.classList.remove('filter-hidden');
+        });
+        
+        // Apply link filtering
         allLinks.forEach(link => {
             const linkId = link.id;
-            if (localStorage.getItem(linkId) === 'visited') {
-                link.classList.add('visited');
+            const isVisited = localStorage.getItem(linkId) === 'visited';
+            
+            if (filterType === 'saved') {
+                if (!isVisited) {
+                    link.classList.add('filter-hidden');
+                }
+            } else if (filterType === 'unsaved') {
+                if (isVisited) {
+                    link.classList.add('filter-hidden');
+                }
+            }
+            // 'all' filter: do nothing, all links are visible
+        });
+        
+        // Now, for each book section, check if it has any visible links
+        // If not, hide the entire book section
+        document.querySelectorAll('.book-section').forEach(section => {
+            const bookId = section.id;
+            // Find all links within this book section
+            const linksInSection = section.querySelectorAll('.prompt-link');
+            let hasVisibleLink = false;
+            linksInSection.forEach(link => {
+                if (!link.classList.contains('filter-hidden')) {
+                    hasVisibleLink = true;
+                }
+            });
+            // If no visible links, hide the book section
+            if (!hasVisibleLink) {
+                section.classList.add('filter-hidden');
             }
         });
         
+        // Update button active states
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-filter') === filterType) {
+                btn.classList.add('active');
+            }
+        });
+    }
+    
+    function applyCurrentFilter() {
+        const activeBtn = document.querySelector('.filter-btn.active');
+        if (activeBtn) {
+            const filterType = activeBtn.getAttribute('data-filter');
+            applyFilter(filterType);
+        }
+    }
+
+    // On page load, check book completion and apply filter
+    document.addEventListener('DOMContentLoaded', function() {
+        // Don't add 'visited' class to hide links
+        // Instead, we'll rely on the filter to show/hide them
+        
         // For each unique book, check if all its links are visited
+        const allLinks = document.querySelectorAll('.prompt-link');
         const uniqueBooks = new Set();
         allLinks.forEach(link => {
             uniqueBooks.add(link.getAttribute('data-book'));
@@ -212,6 +305,17 @@ html_content += """</div>
                 }, 100);
             });
         });
+        
+        // Add event listeners to filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const filterType = this.getAttribute('data-filter');
+                applyFilter(filterType);
+            });
+        });
+        
+        // Apply the default filter (all)
+        applyFilter('all');
     });
 </script>
 </body></html>
