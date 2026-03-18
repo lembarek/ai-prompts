@@ -30,22 +30,53 @@ def generate_1000_prompts(books, methods):
             })
     return output
 
-# 3. Build HTML
+
 html_content = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prompt Library Links</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 40px; background-color: #f8f9fa; }
-        .container { max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .category-section { margin-bottom: 40px; }
-        .prompt-link { display: block; margin: 8px 0; color: #1a0dab; text-decoration: none; font-size: 14px; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            padding: 20px; /* Reduced from 40px for mobile screens */
+            background-color: #f8f9fa; 
+            margin: 0;
+        }
+        .container { 
+            max-width: 900px; 
+            margin: auto; 
+            background: white; 
+            padding: 20px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+        }
+        .category-section { margin-bottom: 30px; }
+        
+        /* 2. BETTER READABILITY: Increased link size and tap area */
+        .prompt-link { 
+            display: block; 
+            margin: 12px 0; 
+            color: #1a0dab; 
+            text-decoration: none; 
+            font-size: 16px; /* 16px is the standard for mobile readability */
+            padding: 5px 0; 
+        }
         .prompt-link:hover { text-decoration: underline; background-color: #f1f3f4; }
-        h1 { color: #202124; text-align: center; }
-        h2 { border-bottom: 2px solid #4285f4; color: #4285f4; padding-bottom: 5px; margin-top: 30px; }
-        .meta-info { font-size: 0.8em; color: #70757a; margin-right: 10px; font-weight: bold; }
+        
+        h1 { color: #202124; text-align: center; font-size: 1.5rem; }
+        h2 { border-bottom: 2px solid #4285f4; color: #4285f4; padding-bottom: 5px; margin-top: 25px; font-size: 1.2rem; }
+        .meta-info { font-size: 0.85em; color: #70757a; margin-right: 10px; font-weight: bold; }
+
+        /* 3. OPTIONAL: Extra polish for very small screens */
+        @media (max-width: 480px) {
+            body { padding: 10px; }
+            .container { padding: 15px; }
+            h1 { font-size: 1.25rem; }
+        }
     </style>
 </head>
 <body>
