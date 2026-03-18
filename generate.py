@@ -24,6 +24,7 @@ def generate_1000_prompts(books, methods):
             final_text = method['prompt'].replace("{title}", book_display)
 
             output.append({
+                "author": book['author'],
                 "book_title": book['title'],
                 "method_type": method['name'],
                 "generated_prompt": final_text  # This key must match the loop below
@@ -95,10 +96,10 @@ for category in books_list:
     total_prompts_count += len(current_category_prompts)
 
     for item in current_category_prompts:
-        if(item['method_type'] == 'The Big Picture Overview'):
-          html_content += f"<div class='category-section'>\n<h3>Book: {item['book_title']}</h3>\n"
+        if(item['method_type'] == 'The Author’s Odyssey'):
+          html_content += f"<div class='category-section'>\n<h3>Book: {item['book_title']} by {item['author']}</h3>\n"
         # We use the key 'generated_prompt' defined in the function above
-        actual_text = "propmt: "+item['generated_prompt']+" book: "+item['book_title']+" method: "+item['method_type']
+        actual_text = "propmt: "+item['generated_prompt']+" and the book is : "+item['book_title']+" and the method is: "+item['method_type']
 
         # URL Encoding for Google
         query_params = {

@@ -3,6 +3,24 @@
     "title": "10 Methods to Master Any Book with AI",
     "version": "1.0",
     "methods": [
+    {
+        "id": 11,
+        "name": "The Author’s Odyssey",
+        "objective": "Understand the creator’s background and credibility.",
+        "prompt": "Provide a detailed summary of the author’s life, their expertise in this subject, and the 'Why' behind this book. What specific life experiences led them to write this?"
+      },
+      {
+        "id": 12,
+        "name": "The Sequential Breakdown",
+        "objective": "Map out the book's structural progression.",
+        "prompt": "List every chapter in the book. For each chapter, provide a concise 3-5 sentence summary capturing the primary argument or plot development."
+      },
+      {
+        "id": 13,
+        "name": "The Expanded Quote Vault",
+        "objective": "Catalog the book's most significant language.",
+        "prompt": "Extract 30 of the most impactful quotes from the book. Organize them by theme and provide a brief explanation of why each quote is essential to the book's overall message."
+      },
       {
         "id": 1,
         "name": "The Big Picture Overview",
