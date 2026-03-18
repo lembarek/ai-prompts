@@ -32,7 +32,7 @@
         "name": "The YouTube Deep-Dive",
         "objective": "Find the highest-rated video analysis and visual summaries.",
         "platform_type": "youtube",
-        "search_link": "https://www.youtube.com/results?search_query=",
+        "search_link": "https://www.youtube.com/results?",
         "prompt": "{title} book summary analysis and full review"
       },
       {
