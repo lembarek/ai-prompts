@@ -117,8 +117,11 @@ for category in books_list:
     for item in current_category_prompts:
         # Create the same ID used in the Index
         book_id = f"book_{item['book_title'].replace(' ', '_')}"
-        
+
         # Add heading only once per book
+        if len(book_headings_added) and book_id not in book_headings_added:
+            html_content += f"</div>\n"
+
         if book_id not in book_headings_added:
             html_content += f"<div class='book-section' id='{book_id}'>\n"
             html_content += f"<h3>Book: {item['book_title']} by {item['author']}</h3>\n"
@@ -164,9 +167,11 @@ for category in books_list:
         link_id = f"link_{item['book_title'].replace(' ', '_')}_{item['method_type'].replace(' ', '_')}"
         method_label = html.escape(item['method_type']).upper()
         html_content += f'    <a id="{link_id}" class="prompt-link" href="{final_url}" target="_blank" data-book="{item["book_title"]}" data-method="{item["method_type"]}"><span class="meta-info">{method_label}</span></a>\n'
-    
+
+
+
     # Close book-section divs
-    for _ in book_headings_added:
+    for book_id in book_headings_added:
         html_content += "</div>\n"
 
     html_content += "</div>\n"
@@ -191,14 +196,14 @@ html_content += """</div>
         // Find all links for this book
         const allLinks = document.querySelectorAll(`.prompt-link[data-book="${bookTitle}"]`);
         let allVisited = true;
-        
+
         allLinks.forEach(link => {
             const linkId = link.id;
             if (localStorage.getItem(linkId) !== 'visited') {
                 allVisited = false;
             }
         });
-        
+
         const bookId = 'book_' + bookTitle.replace(/ /g, '_');
         const bookSection = document.getElementById(bookId);
         if (bookSection) {
