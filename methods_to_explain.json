@@ -1,0 +1,52 @@
+{
+  "learning_methods": [
+    {
+      "id": 1,
+      "name": "The Visual Overview",
+      "objective": "Gain a high-level visual and auditory understanding of the concept.",
+      "platform_type": "youtube",
+      "search_link": "https://www.youtube.com/results?",
+      "prompt": "{tip}"
+    },
+    {
+      "id": 2,
+      "name": "The AI Concept Breakdown",
+      "objective": "Clarify specific technical nuances and get immediate code examples.",
+      "platform_type": "google_ai",
+      "search_link": "https://www.google.com/search?udm=50",
+      "prompt": "Explain the concept of {tip} to me as if I am a junior fullstack developer. Provide one 'bad' code example and one 'best practice' code example."
+    },
+    {
+      "id": 3,
+      "name": "The Documentation Deep-Dive",
+      "objective": "Read authoritative sources for edge cases and technical specifications.",
+      "platform_type": "google_search",
+      "search_link": "https://www.google.com/search?q=documentation+mdn+v8",
+      "prompt": "{tip}"
+    },
+    {
+      "id": 4,
+      "name": "The Knowledge Retention Quiz",
+      "objective": "Test memory and logic using active recall and AI-generated scenarios.",
+      "platform_type": "google_ai",
+      "search_link": "https://www.google.com/search?udm=50",
+      "prompt": "Act as a senior lead developer. Generate 5 challenging multiple-choice questions about {tip} that focus on real-world debugging scenarios. Do not show answers until I respond. Ask One Question by One"
+    },
+    {
+      "id": 6,
+      "name": "The Feynman Teaching Method",
+      "objective": "Simplify the concept to ensure there are no gaps in your logic.",
+      "platform_type": "google_ai",
+      "search_link": "https://www.google.com/search?udm=50",
+      "prompt": "I am going to explain {tip} to you. Please act as a critical student and ask me two 'why' questions that challenge my explanation to see if I truly understand it."
+    },
+    {
+      "id": 8,
+      "name": "The Peer Solution Review",
+      "objective": "Compare your approach with expert-level implementations.",
+      "platform_type": "github_codewars",
+      "search_link": "https://www.google.com/search?q=site:github.com+implementation+example",
+      "prompt": "Search for open-source repositories or challenges using {tip}. Analyze a solution that is different from yours and identify one optimization they used."
+    }
+  ]
+}
