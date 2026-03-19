@@ -168,11 +168,11 @@ for category in books_list:
         method_label = html.escape(item['method_type']).upper()
         html_content += f'    <a id="{link_id}" class="prompt-link" href="{final_url}" target="_blank" data-book="{item["book_title"]}" data-method="{item["method_type"]}"><span class="meta-info">{method_label}</span></a>\n'
 
-
+    html_content += f"</div>\n"
 
     # Close book-section divs
-    for book_id in book_headings_added:
-        html_content += "</div>\n"
+    # for book_id in book_headings_added:
+        # html_content += "</div>\n"
 
     html_content += "</div>\n"
 
